@@ -19,6 +19,9 @@ public class MarkdownParse {
             int closeParen = markdown.indexOf(")", openParen);
             System.out.println("Open paren value " + openParen);
             System.out.println("Close paren value " + closeParen);
+            if(openParen == -1 || closeParen == -1){
+                return toReturn;
+            }
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
         }
